@@ -4,7 +4,7 @@ import sys
 import os
 import platform
 
-from src.predict import predict_sound
+from predict import predict_sound
 
 HAZARD_CLASSES = ["gun_shot", "siren", "drilling"]
 

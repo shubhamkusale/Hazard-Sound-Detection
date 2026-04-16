@@ -16,8 +16,10 @@ def train():
 
     dataset = UrbanSoundDataset(csv_path, base_path, selected_classes)
 
-    train_size = int(0.8 * len(dataset))
-    test_size = len(dataset) - train_size
+    torch.manual_seed(42)
+    dataset_size = len(dataset)
+    train_size = int(0.8 * dataset_size)
+    test_size = dataset_size - train_size
 
     train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
 

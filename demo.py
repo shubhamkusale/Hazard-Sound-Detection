@@ -1,5 +1,6 @@
 import torch
 import matplotlib.pyplot as plt
+import os
 from src.dataset import UrbanSoundDataset
 
 
@@ -42,4 +43,7 @@ plt.title("Mel Spectrogram Example")
 plt.xlabel("Time")
 plt.ylabel("Mel Frequency")
 plt.tight_layout()
+os.makedirs("outputs", exist_ok=True)
+plt.savefig("outputs/mel_spectrogram.png", dpi=200, bbox_inches="tight")
+print("Saved image: outputs/mel_spectrogram.png")
 plt.show()
